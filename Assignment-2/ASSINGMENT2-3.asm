@@ -1,0 +1,11 @@
+//Assignment-2 Question-3
+MVI D, 8EH;
+MVI E, F7H;
+MOV A,D;
+ANI F0H;
+MOV D,A;
+MOV A,E;
+ANI F0H;
+XRA D;
+STA 5040H;
+HLT;

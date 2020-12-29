@@ -1,0 +1,41 @@
+// Assignment 3
+
+// Q 11b
+
+// XOVER
+LDA 3FFFH;
+LHLD 4000H;
+XCHG;
+MVI H,40H;
+MOV L,A;
+MOV A,M;
+MOV B,A;
+CMA;
+MOV C,A;
+MOV A,D;
+ANA B;
+// FLAG = 14H
+MOV H,A;
+MOV A,E;
+ANA C;
+// FLAG = 10H
+ORA H;
+// FLAG = 00H
+MOV H,A;
+MOV A,D;
+ANA C;
+// FLAG = 54
+MOV L,A;
+MOV A,E;
+ANA B;
+// FLAG = 14
+ORA L;
+// FLAG = 04
+MOV L,A;
+SHLD 5001;
+HLT;
+
+# ORG 3FFFH
+# DB 03H,54H, 78H, FCH,F8H,F0H,E0H
+
+// Total T-States = 140
